@@ -20,6 +20,8 @@ import HooksContext from './views/UseContext/HooksContext';
 import ModeloSemContext from './views/UseContext/ModeloSemContext';
 import ModeloContext from './views/UseContext/ModeloContext';
 
+import ModeloCallback from './views/UseCallback';
+
 const App = () => (
   <Provider store={store}>
     <Router>
@@ -31,6 +33,7 @@ const App = () => (
       <Route path="/hooksContext" component={HooksContext} />
       <Route path="/modeloSemContext" component={ModeloSemContext} />
       <Route path="/ModeloContext" component={ModeloContext} />
+      <Route path="/ModeloCallback" component={ModeloCallback} />
     </Router>
   </Provider>
 );

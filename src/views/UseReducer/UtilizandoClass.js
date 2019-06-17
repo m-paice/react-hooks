@@ -1,7 +1,7 @@
 /**
-* @author Matheus Paice <matheus.ferreira@jbtec.com.br>
-* @description Modelo utilizando class
-*/
+ * @author Matheus Paice <matheus.ferreira@jbtec.com.br>
+ * @description Modelo utilizando class
+ */
 
 import React from 'react';
 
@@ -15,32 +15,37 @@ import PropTypes from 'prop-types';
 import { Creators as clienteActions } from '../../store/ducks/cliente';
 
 class UtilizandoClass extends React.Component {
-  componentDidMount() {} // Apenas para informar que utilizarei classe
+    componentDidMount() {} // Apenas para informar que utilizarei classe
 
-  render() {
-    const { all, novoCliente } = this.props;
+    render() {
+        const { all, novoCliente } = this.props;
 
-    return (
-      <div>
-        {all && <p>{`Id: ${all.map(v => v)}`}</p>}
+        return (
+          <div>
+            {all && <p>{`Id: ${all.map(v => v)}`}</p>}
 
-        <button
-          type="button"
-          onClick={() => novoCliente(
-            {
-              id: Math.random(), nome: 'Rainã Pepe', email: 'raina.pepe@jbtec.com.br', telefone: '(14) 99889-1198',
-            },
-          )}
-        > Novo
-        </button>
-      </div>
-    );
-  }
+            <button
+              type="button"
+              onClick={() =>
+                        novoCliente({
+                            id: Math.random(),
+                            nome: 'Rainã Pepe',
+                            email: 'raina.pepe@jbtec.com.br',
+                            telefone: '(14) 99889-1198',
+                        })
+                    }
+            >
+              {' '}
+                    Novo
+            </button>
+          </div>
+        );
+    }
 }
 
 UtilizandoClass.propTypes = {
-  all: PropTypes.arrayOf(PropTypes.number).isRequired,
-  novoCliente: PropTypes.func.isRequired,
+    all: PropTypes.arrayOf(PropTypes.number).isRequired,
+    novoCliente: PropTypes.func.isRequired,
 };
 
 /**
@@ -48,7 +53,7 @@ UtilizandoClass.propTypes = {
  * @param {Object} state
  */
 const mapStateToProps = state => ({
-  all: state.cliente.all,
+    all: state.cliente.all,
 });
 
 /**
@@ -57,5 +62,7 @@ const mapStateToProps = state => ({
  */
 const mapDispatchToProps = dispatch => bindActionCreators(clienteActions, dispatch);
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(UtilizandoClass);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(UtilizandoClass);

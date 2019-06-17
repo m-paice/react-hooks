@@ -1,7 +1,7 @@
 /**
-* @author Matheus Paice <matheus.ferreira@jbtec.com.br>
-* @description Primeiro Nivel com context
-*/
+ * @author Matheus Paice <matheus.ferreira@jbtec.com.br>
+ * @description Primeiro Nivel com context
+ */
 
 import React from 'react';
 
@@ -22,22 +22,27 @@ const SegundoNivel = () => (
 
 const TerceiroNivel = () => (
   <CorContext.Consumer>
-    {context => <div>  <h1>Terceiro Nivel </h1> {context}  </div>}
+    {context => (
+      <div>
+        {' '}
+        <h1>Terceiro Nivel </h1> {context}{' '}
+      </div>
+        )}
   </CorContext.Consumer>
 );
 
 class Index extends React.Component {
-  componentDidMount() {}
+    componentDidMount() {}
 
-  render() {
-    return (
-      <div>
-        <CorContext.Provider value="Vermelho">
-          <PrimeiroNivel />
-        </CorContext.Provider>
-      </div>
-    );
-  }
+    render() {
+        return (
+          <div>
+            <CorContext.Provider value="Vermelho">
+              <PrimeiroNivel />
+            </CorContext.Provider>
+          </div>
+        );
+    }
 }
 
 export default Index;

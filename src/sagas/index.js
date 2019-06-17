@@ -7,7 +7,7 @@ import { all } from 'redux-saga/effects';
 import watcherCliente from './cliente';
 
 function* sagas() {
-  yield all([watcherCliente()]);
+    yield all([watcherCliente()]);
 }
 
 export default sagas;

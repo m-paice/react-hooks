@@ -1,7 +1,7 @@
 /**
-* @author Matheus Paice <matheus.ferreira@jbtec.com.br>
-* @description Primeiro Nivel com context
-*/
+ * @author Matheus Paice <matheus.ferreira@jbtec.com.br>
+ * @description Primeiro Nivel com context
+ */
 
 import React, { useContext } from 'react';
 
@@ -21,10 +21,8 @@ const SegundoNivel = () => (
 );
 
 const TerceiroNivel = () => {
-  const context = useContext(CorContext);
-  return (
-    <div> { context } </div>
-  );
+    const context = useContext(CorContext);
+    return <div> {context} </div>;
 };
 
 const Index = () => (
